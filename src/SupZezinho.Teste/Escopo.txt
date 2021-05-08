@@ -1,0 +1,1 @@
+Preparação para o proximo passo: Crias testes automatizados.

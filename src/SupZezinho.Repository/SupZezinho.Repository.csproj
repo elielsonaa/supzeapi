@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  
+   <ItemGroup>
+    <ProjectReference Include="..\SupZezinho.Domain\SupZezinho.Domain.csproj" />
+  </ItemGroup>
+  
+   <ItemGroup>
+     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.5.2" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+       <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.5" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+       <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
+     <PackageReference Include="OData.Swagger" Version="1.0.0" />
+   </ItemGroup>
+</Project>
