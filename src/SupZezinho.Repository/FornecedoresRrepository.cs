@@ -17,16 +17,15 @@ namespace SupZezinho.Repository
         {
             IQueryable<Fornecedor> query = _context.Fornecedores.Include(p => p.ProdutoFornecedor
                                       .Where(p => p.FornecedorId == Id));
-             query = query.OrderBy(p => p.Id).Where(p => p.Id == Id);
-             return await query.FirstOrDefaultAsync();
+            query = query.OrderBy(p => p.Id).Where(p => p.Id == Id);
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task<Fornecedor[]> BuscarFornecedoresAsync()
         {
             IQueryable<Fornecedor> query = _context.Fornecedores.OrderBy(f => f.Id)
-                                            //.Include(p => p.Produtos)
-                                            .Include(f => f.ProdutoFornecedor);
-                                                                                   
+                                            .Include(f => f.ProdutoFornecedor)
+                                            .ThenInclude(p => p.Produto);
             return await query.ToArrayAsync();
         }
     }
